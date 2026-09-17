@@ -29,6 +29,17 @@ find_dir() {
     echo "$dirname"
 }
 
+check_dir() {
+    local dirname="${pg_root}/PG1/${lastname}"
+
+    if [[ -d "$dirname" ]]; then
+        echo "Error: Directory '$dirname' already exists. Please choose a different name." >&2
+        exit 1
+    fi
+
+    echo "$dirname"
+}
+
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         -n|--name)
@@ -54,7 +65,7 @@ lastname=$(echo "$lastname" | tr '[:upper:]' '[:lower:]')
 email=$(echo "$email" | tr '[:upper:]' '[:lower:]')
 pg_root="/scratch/group/pgenomics"
 
-scratch_dir=$(find_dir)
+scratch_dir=$(check_dir)
 
 echo "Creating directory: $scratch_dir if it does not exist..."
 mkdir -p "$scratch_dir"
