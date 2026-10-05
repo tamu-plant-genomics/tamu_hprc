@@ -18,7 +18,6 @@ nav:
   - Home: index.md
   - General: general/index.md
   - HPRC:
-      - Overview: hprc/index.md
       - Getting Started: hprc/getting_started.md
       - Job Submission: hprc/job_submission.md
       - Job Monitoring: hprc/job_monitoring.md
