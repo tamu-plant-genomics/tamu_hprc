@@ -1,8 +1,50 @@
-site_name: HPRC Setup Guide
+site_name: TAMU Plant Genomics
 theme:
-  name: material
+  name: readthedocs
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - navigation.sections
+    - header.autohide
+  palette:
+    - scheme: default
+      primary: teal
+      accent: deep orange
 
 nav:
   - Home: index.md
-  - Setup & Connection: setup.md
-  - Job Submission: jobs.md
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - ezlinks
+#  - minify:
+#      minify_html: true
+#  - macros
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+
+extra_javascript:
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
+  - mathjaxhelper.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js
+  - js/katex.js  # (create this file as described below)
