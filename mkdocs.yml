@@ -16,7 +16,7 @@ theme:
 
 nav:
   - Home: index.md
-  - General:
+  - General: general/index.md
   - HPRC:
       - Overview: hprc/index.md
       - Getting Started: hprc/getting_started.md
