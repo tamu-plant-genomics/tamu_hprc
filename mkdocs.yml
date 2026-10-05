@@ -1,0 +1,8 @@
+site_name: HPRC Setup Guide
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Setup & Connection: setup.md
+  - Job Submission: jobs.md
