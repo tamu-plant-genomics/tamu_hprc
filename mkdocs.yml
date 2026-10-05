@@ -16,6 +16,15 @@ theme:
 
 nav:
   - Home: index.md
+  - General:
+  - HPRC:
+      - Overview: hprc/index.md
+      - Getting Started: hprc/getting_started.md
+      - Job Submission: hprc/job_submission.md
+      - Job Monitoring: hprc/job_monitoring.md
+      - File Transfer: hprc/file_transfer.md
+      - Software Modules: hprc/software_modules.md
+      - Troubleshooting: hprc/troubleshooting.md
 
 markdown_extensions:
   - admonition
