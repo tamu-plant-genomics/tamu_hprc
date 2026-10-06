@@ -5,17 +5,17 @@
 
 `svmarkers` is a CLI tool designed to generate and quality-control PCR primers targeted at Structural Variants (SVs) using genome assemblies and SyRI annotations.
 
----
-
 ## Features
 
 - **Primer Extraction (`extract`):** Generates candidate primer pairs around structural variations (`INS`, `INV`, `DEL`, `CPL`, `CPG`).
 - **Quality Control (`qc`):** Performs thermodynamic, sequence repeat, and BLAT-based specificity filtering on custom primer sets.
 - **Configurable Filtering:** Fine-tune product sizes, melting temperatures ($T_m$), GC content, and secondary structure constraints.
 
----
 
+---
 ## Installation
+
+The tool is already installed under the conda environment `svmarkers` on the HPRC cluster. To set up a local environment, follow these steps:
 
 ```bash
 # create conda environment with pblat
@@ -29,6 +29,7 @@ cd svmarkers
 # Install package
 pip install -e .
 ```
+
 ---
 ## Quick Start
 
@@ -59,11 +60,9 @@ svmarkers qc \
   --threads 8
 
 ```
-
----
-
-## Command Reference
-
+<br>
+## Commands
+ 
 ### `svmarkers extract`
 
 Extracts target SV regions and designs optimal primer pairs.
@@ -95,7 +94,7 @@ Extracts target SV regions and designs optimal primer pairs.
 
 ### `svmarkers qc`
 
-Filters and assesses primer quality.
+Assess primer quality.
 
 #### Required Options
 
@@ -110,8 +109,6 @@ Filters and assesses primer quality.
 | --- | --- | --- | --- |
 | `--outdir` | `-o` | `qc_output` | Output directory path |
 | `--threads` | `-t` | `2` | Number of parallel threads |
-
----
 
 ### Shared Parameter Groups (`extract` & `qc`)
 
@@ -209,25 +206,25 @@ This tab-separated file details designed primer trios/pairs for each detected st
 | Del_ComLF_VarLR | Deletion | Uses a common Left Forward \(LF\) primer upstream of the deletion site, paired with Genome 1 and Genome 2 specific Left Reverse \(LR\) primers\. | • Common: Left Forward \(LF\)• G1 Var: Left Reverse \(LR\)• G2 Var: Left Reverse \(LR\) | 
 | Del_ComRR_LR_VarRF_LF | Deletion | Reciprocal deletion assay\. Uses Right Reverse \(RR\) in G1 and Left Reverse \(LR\) in G2 as anchors, paired with Right Forward \(RF\) and Left Forward \(LF\) variable primers\. | • Common: G1 RR / G2 LR• G1 Var: Right Forward \(RF\)• G2 Var: Left Forward \(LF\) |
 
----
+
 
 ![Inversion Primer Designs](imgs/INV.png)
 
 **Figure 1: Primer orientation designs for Inversions (INV).**
 
----
+
 
 ![Insertion Primer Designs](imgs/INS.png)
 
 **Figure 2: Primer orientation designs for Insertions (INS).**
 
----
+
 
 ![Deletion Primer Designs](imgs/DEL.png)
 
 **Figure 3: Primer orientation designs for Deletions (DEL).**
 
----
+
 
 #### Primer Orientation Key
 
@@ -237,8 +234,12 @@ This tab-separated file details designed primer trios/pairs for each detected st
 * **`RR` (Right Reverse):** Antisense primer located downstream ($3'$) of the SV region.
 
 ---
+
 ## GenAI Involvement
+
 This project was developed with the assistance of GenAI tools (Copilot), which helped only with drafting documentation and refactoring code. The final content has been reviewed and verified.
+
+---
 
 ## Contact
 For questions, issues, or feature requests, please open an issue on the [GitHub repository](https://github.com/sivasubramanics/svmarkers/issues).

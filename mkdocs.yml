@@ -1,6 +1,9 @@
 site_name: TAMU Plant Genomics
 theme:
-  name: readthedocs
+#  name: readthedocs
+#  name: dracula
+  name: cluster
+  favicon: assets/favicon.ico
 
 nav:
   - Home: index.md
@@ -12,12 +15,8 @@ nav:
       - Slurm Support: hprc/slurm_support.md
   - Analysis:
       - Overview: analysis/overview.md
-      - Tools:
-        - Overview: analysis/tools.md
-        - myrs: analysis/myrs.md
-        - svmarkers: analysis/svmarkers.md
-      - Pipelines:
-        - Overview: analysis/pipelines.md
+      - Tools: analysis/tools.md
+      - Pipelines: analysis/pipelines.md
 
 markdown_extensions:
   - admonition
