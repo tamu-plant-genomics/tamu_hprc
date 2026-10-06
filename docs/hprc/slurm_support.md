@@ -12,15 +12,15 @@ Environment modules manage software compilers, libraries, and tools installed on
 
 List all environment modules currently loaded in your active session.
 
-* **Usage:** `module-list`
-* **Underlying Command:** `module list`
+**Usage:** `module-list`
+**Underlying Command:** `module list`
 
 ### `module-find`
 
 Search for available software modules across the cluster using Lmod `spider` or `avail`.
 
-* **Usage:** `module-find <keyword>`
-* **Examples:**
+**Usage:** `module-find <keyword>`
+**Examples:**
 ```bash
 module-find samtools
 module-find GCC
@@ -33,8 +33,8 @@ module-find GCC
 
 Safely load one or more environment modules and display the updated list of loaded modules upon completion.
 
-* **Usage:** `module-load <module_name> [module_name2 ...]`
-* **Examples:**
+**Usage:** `module-load <module_name> [module_name2 ...]`
+**Examples:**
 ```bash
 module-load GCC/12.3.0
 module-load WebProxy/0000 samtools/1.17
@@ -47,8 +47,8 @@ module-load WebProxy/0000 samtools/1.17
 
 Unload all currently active environment modules to reset your environment state.
 
-* **Usage:** `module-purge`
-* **Underlying Command:** `module purge`
+**Usage:** `module-purge`
+**Underlying Command:** `module purge`
 
 ### `module-save` & `module-restore`
 
@@ -65,15 +65,15 @@ Save your current loaded module collection as default, or restore your saved def
 
 Displays a clean, custom-formatted table of your queued and running Slurm jobs.
 
-* **Usage:** `slurm-queue`
-* **Output Fields:** `JOBID`, `NAME`, `STATE`, `CPUS`, `MIN_MEMORY`, `TIME_USED`, `TIME_LEFT`, `NODELIST(REASON)`
+**Usage:** `slurm-queue`
+**Output Fields:** `JOBID`, `NAME`, `STATE`, `CPUS`, `MIN_MEMORY`, `TIME_USED`, `TIME_LEFT`, `NODELIST(REASON)`
 
 ### `slurm-history`
 
 Queries `sacct` to display job execution history and timestamp details for completed, failed, or canceled jobs.
 
-* **Usage:** `slurm-history [days]` *(Default: 3 days)*
-* **Examples:**
+**Usage:** `slurm-history [days]` *(Default: 3 days)*
+**Examples:**
 ```bash
 slurm-history       # View history for the past 3 days
 slurm-history 7     # View history for the past 7 days
@@ -86,21 +86,21 @@ slurm-history 7     # View history for the past 7 days
 
 Finds your most recently submitted job ID and interactively prompts for confirmation before canceling it via `scancel`.
 
-* **Usage:** `slurm-cancel-last`
+**Usage:** `slurm-cancel-last`
 
 ### `slurm-job-eff`
 
 Inspects the CPU and memory resource utilization efficiency of a finished Slurm job via `seff`.
 
-* **Usage:** `slurm-job-eff <job_id>`
-* **Example:** `slurm-job-eff 12345678`
+**Usage:** `slurm-job-eff <job_id>`
+**Example:** `slurm-job-eff 12345678`
 
 ### `slurm-log`
 
 Locates and streams (`tail -f`) the output log file for an active or completed job. If no `job_id` is passed, it automatically targets your most recently submitted job.
 
-* **Usage:** `slurm-log [job_id]`
-* **Examples:**
+**Usage:** `slurm-log [job_id]`
+**Examples:**
 ```bash
 slurm-log          # Tail the log of your most recent job
 slurm-log 12345678 # Tail the log of a specific job
@@ -117,14 +117,14 @@ slurm-log 12345678 # Tail the log of a specific job
 
 Requests an interactive compute node session using `srun`. Supports flexible time/memory formatting and optional automatic Conda environment activation.
 
-* **Usage:**
+**Usage:**
 ```bash
 slurm-shell [-p cpus] [-m mem] [-t time] [-n nodes] [-e conda_env] [-h]
 
 ```
 
 
-* **Options:**
+**Options:**
 
 | Flag | Option | Description | Default |
 | --- | --- | --- | --- |
@@ -136,7 +136,7 @@ slurm-shell [-p cpus] [-m mem] [-t time] [-n nodes] [-e conda_env] [-h]
 | `-h` |  | Display help message |  |
 
 
-* **Examples:**
+**Examples:**
 ```bash
 # Standard 4 CPU, 16GB memory session for 4 hours
 slurm-shell -p 4 -m 16 -t 4h
@@ -158,14 +158,14 @@ Submits a background batch job via `sbatch` directly from the command line witho
 
 The tool automatically injects logging, timestamp headers, module loading, Conda initialization, and email notifications.
 
-* **Usage:**
+**Usage:**
 ```bash
 slurm-submit -j <job_name> -c <command> [-M "modules"] [-e conda_env] [-t time] [-m mem] [-p cpus] [-n nodes] [-E email] [-h]
 
 ```
 
 
-* **Options:**
+**Options:**
 
 | Flag | Required | Option | Description | Default |
 | --- | --- | --- | --- | --- |
@@ -180,7 +180,7 @@ slurm-submit -j <job_name> -c <command> [-M "modules"] [-e conda_env] [-t time] 
 | `-E` | No | `<email>` | Email for completion/failure alerts | `$MYEMAIL` |
 
 
-* **Examples:**
+**Examples:**
 **Running a alignment script with a Conda environment:**
 ```bash
 slurm-submit -j align_job -c "minimap2 -t 16 ref.fa reads.fq > out.sam" -e utils -p 16 -m 64 -t 8h
