@@ -1,29 +1,23 @@
 site_name: TAMU Plant Genomics
 theme:
   name: readthedocs
-  features:
-    - navigation.instant
-    - navigation.tracking
-    - toc.integrate
-    - content.code.copy
-    - content.code.annotate
-    - navigation.sections
-    - header.autohide
-  palette:
-    - scheme: default
-      primary: teal
-      accent: deep orange
 
 nav:
   - Home: index.md
-  - General: general/index.md
   - HPRC:
+      - Overview: hprc/overview.md
       - Getting Started: hprc/getting_started.md
-      - Job Submission: hprc/job_submission.md
-      - Job Monitoring: hprc/job_monitoring.md
-      - File Transfer: hprc/file_transfer.md
-      - Software Modules: hprc/software_modules.md
-      - Troubleshooting: hprc/troubleshooting.md
+      - Data Resources: hprc/data_resources.md
+      - Conda Environments: hprc/conda_env.md
+      - Slurm Support: hprc/slurm_support.md
+  - Analysis:
+      - Overview: analysis/overview.md
+      - Tools:
+        - Overview: analysis/tools.md
+        - myrs: analysis/myrs.md
+        - svmarkers: analysis/svmarkers.md
+      - Pipelines:
+        - Overview: analysis/pipelines.md
 
 markdown_extensions:
   - admonition
@@ -42,17 +36,12 @@ plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - ezlinks
-#  - minify:
-#      minify_html: true
-#  - macros
 
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
 
 extra_javascript:
-  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
-  - mathjaxhelper.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js
-  - js/katex.js  # (create this file as described below)
+  - js/katex.js

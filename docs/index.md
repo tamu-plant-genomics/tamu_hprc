@@ -1,11 +1,8 @@
-# Welcome TAMU Plant Genomics Group
+# Welcome to TAMU Plant Genomics Group Wiki
 
-## Contents
-### General Information
-### HPRC
-  - [HPRC overview](hprc/overview.md)
-  - [HPRC Getting Started](hprc/getting_started.md)
-  - [HPRC Data Resources](hprc/data_resources.md)
-  - [HPRC Conda Environments](hprc/conda_env.md)
-  - [HPRC Slurm Suport](hprc/slurm_support.md)
-### Analysis
+This wiki serves as the central knowledge hub for the **TAMU Plant Genomics Group**. Here you will find documentation, guidelines, and references for high-performance computing on TAMU HPRC, shared datasets, and bioinformatic pipelines.
+
+## Quick Start Navigation
+
+* **High Performance Research Computing (HPRC):** Setup guides, group Slurm scripts, shared environments, and central datasets.
+* **Genomic Analysis:** Standardized group pipelines, standalone tools, and `myrs` custom utility guides.
