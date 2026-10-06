@@ -4,3 +4,4 @@ sphinxemoji
 sphinx-markdown-tables
 mkdocs-material
 mkdocs-ezlinks-plugin
+mkdocs-cluster
