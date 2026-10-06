@@ -125,6 +125,7 @@ slurm-shell [-p cpus] [-m mem] [-t time] [-n nodes] [-e conda_env] [-h]
 
 
 * **Options:**
+
 | Flag | Option | Description | Default |
 | --- | --- | --- | --- |
 | `-p` | `<cpus>` | Number of CPU cores requested | `2` |
@@ -165,6 +166,7 @@ slurm-submit -j <job_name> -c <command> [-M "modules"] [-e conda_env] [-t time] 
 
 
 * **Options:**
+
 | Flag | Required | Option | Description | Default |
 | --- | --- | --- | --- | --- |
 | `-j` | **Yes** | `<job_name>` | Name of the job (determines `<job_name>_%j.out` log name) | *None* |
