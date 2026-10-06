@@ -28,6 +28,8 @@ Standard shortcuts for environment navigation and package management:
 | `mi` | Management | Install package(s) into active environment | `mi samtools bedtools` | Admin/Write Perms |
 | `mrme` | Management | Remove an existing environment | `mrme my_env` | Admin/Write Perms |
 | `mclean` | Cleanup | Clear package caches and tarballs | `mclean` | Free up scratch space |
+| `conda-inspect` | Inspection | Show detailed info about a package in an environment | `conda-inspect samtools` | Read-only |
+| `conda-find` | Inspection | Search for a package across all environments | `conda-find fastqc` | Read-only |
 
 ---
 
@@ -110,3 +112,5 @@ m.minimap2 -t 16 -ax map-hifi ref.fa reads.fastq.gz | m.samtools sort -@ 4 -o al
 m.samtools index aligned.bam
 
 ```
+
+If you do not find a tool or environment you need, please contact the group admin/PI to request its addition.
